@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            position: fixed;
+        }
+        nav {
+            background-color: rgb(59, 59, 230);
+            padding: 0.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 5px 20px;
+        }
+        nav a.active, nav a:hover{
+            background-color: rgba(0, 255, 255, 0.638);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <a class="active">Home</a>
+            <a href="">About</a>
+            <a href="">Projects</a>
+            <a href="">Contacts</a>
+        </nav>
+    </div>
+</body>
+
+</html>
