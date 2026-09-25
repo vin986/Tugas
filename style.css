@@ -1,268 +1,47 @@
+/* Mengatur format paling dasar untuk keseluruhan body dokumen */
 body {
     margin: 0;
-    font-family: arial;
+    font-family: Arial, sans-serif;
+}
+
+@media(min-width: 1200px) {
+    /* 
+       Jika lebar layar monitor melebihi atau sama dengan 1200px, 
+       lebar maksimal kotak pembungkus (container) dikunci di batas angka 970px.
+    */
+    .container {
+        max-width: 970px;
+    }
 }
 
 #bungkus {
-    width: 1000px;
-    margin: 20px auto 0;
+    /* Lebar maksimalnya adalah 1000px agar tidak kepanjangan di monitor raksasa */
+    max-width: 1000px;
+    /* Margin 0 auto menempatkan kotak pembungkus tepat di tengah-tengah layar secara presisi */
+    margin: 0 auto;
 }
 
 #logo img {
+    /* Mengunci dan memperkecil gambar logo persis di dimensi 80 pixel */
     width: 80px;
-    margin: 10px 0 0 10px;
 }
 
-#menu ul {
-    margin: 0;
-    padding: 0;
+.navbar-nav .nav-link {
+    font-size: 18px;
+    padding: 10px 15px;
 }
 
-#menu ul li {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-    text-align: center;
-    margin-right: 10px;
-}
-
-#logo {
-    margin-bottom: 20px;
-}
-
-#menu {
-    margin-top: 50px;
-}
-
-#menu ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    padding: 30px 0;
-}
-
-#menu ul li a:hover,
-#menu ul li a.active {
-    border-bottom: 5px solid blue;
-}
-
-#top {
-    display: flex;
-    justify-content: space-between;
-}
-
-#banner {
-    height: 400px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-#banner img {
-    width: 100%;
-}
-
-#highlight {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-#highlight .box {
-    width: 320px;
-    height: 180px;
-    background: grey;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.box img {
-    width: 320px;
-}
-
-#content {
-    display: grid;
-    grid-template-columns: 40% 1fr;
-    gap: 40px;
-    margin-top: 20px;
-    padding-bottom: 10px;
-}
-
-.subtitle {
-    flex: 1;
-    overflow: hidden;
-}
-
-.subtitle img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-#content .text {
-    padding: 10px 0;
-}
-
-#content h2,
-#content p {
-    margin-top: 0;
-    font-weight: bold;
-}
-
-#ourClient h2 {
-    display: flex;
-    justify-content: center;
-}
-
-#ourClient {
-    justify-content: center;
-    margin: 20px 0 20px 0;
-}
-
-#ourClient .client {
-    display: flex;
-    justify-content: space-around;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.client img {
-    width: 10%;
-}
-
-#testimonial {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-#testimonial-john-tony {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0 20px 0;
-}
-
-.testimonial-john,
-.testimonial-tony {
-    border: 1px solid black;
-    border-radius: 15px;
-    background: #808080;
-    text-align: center;
-    width: 450px;
-    padding: 20px;
-}
-
-.testimonial-john img,
-.testimonial-tony img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: white;
-}
-
-.testimonial-john p,
-.testimonial-tony p {
-    font-weight: bold;
-}
-
-#subscribe {
-    background-color: #ff1495;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    margin: 15px auto;
-    align-items: center;
-    width: 80%;
-}
-
-#subscribe form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-#subscribe form input {
-    width: 50%;
-    max-width: 500px;
-    padding: 12px 15px;
-    border: none;
-    text-align: center;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    border-bottom: 4px solid blue;
 }
 
 #subscribe form button {
-    background-color: transparent;
-    font-weight: bold;
-    color: white;
     border: 2px solid white;
-    padding: 10px 30px;
-    font-size: 1rem;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
 #subscribe form button:hover {
     background-color: white;
-    color: #ff007f;
-}
-
-#footer-section {
-    background-color: #343434;
-    color: #ffffff;
-    padding: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    font-family: Arial, sans-serif;
-    margin-top: 20px;
-}
-
-.footer-left h2 {
-    margin: 0 0 15px 0;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.footer-left p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #cccccc;
-    font-weight: bold;
-}
-
-.footer-left .tel {
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-/* Sisi Kanan */
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
-}
-
-.footer-right .image {
-    display: flex;
-    gap: 12px;
-}
-
-.icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.copyright {
-    margin: 0;
-    font-size: 0.8rem;
-    color: #bbbbbb;
-    font-weight: bold;
+    color: #ff1495;
 }

@@ -6,130 +6,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="bungkus">
-        <div id="top">
-            <div id="logo">
-                <a href="#">
-                    <img src="images/web-development.png" alt="Logo">
-                </a>
-            </div>
+    <!-- class="container": Membatasi lebar maksimal konten agar rapi di tengah layar -->
+    <!-- class="py-3": Utility Bootstrap untuk memberikan Padding sumbu Y (atas-bawah) sebesar ukuran 3 -->
+    <div id="bungkus" class="container py-3">
+        
+        <!-- container-fluid px-0: Memakan lebar penuh pembungkusnya, padding X (kiri-kanan) di-set 0 (nol) -->
+        <div class="container-fluid px-0">
+            <!-- navbar: Komponen menu navigasi bawaan Bootstrap -->
+            <!-- navbar-expand-lg: Menu akan memanjang normal di layar besar (lg), dan berubah jadi tombol lipat di layar kecil -->
+            <!-- navbar-light: Memberi tema warna teks gelap (cocok untuk background terang) -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- d-flex justify-content-between: Menyebar elemen (Logo di kiri, Menu di kanan) -->
+                <div class="container-fluid px-0 d-flex justify-content-between">
+                    
+                    <a id="logo" class="navbar-brand" href="#">
+                        <!-- img-fluid: Gambar akan mengecil otomatis jika layar disempitkan agar tidak terpotong -->
+                        <img src="images/web-development.png" alt="" class="img-fluid">
+                    </a>
 
-            <div id="menu">
-                <ul>
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="product.html">Product</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- ms-auto: Margin-Start Auto (Mendorong seluruh menu ke sisi kanan layar) -->
+                        <!-- d-flex align-items-center gap-2: Menyejajarkan menu secara vertikal dan memberi jarak antar menu sebesar ukuran 2 -->
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center gap-2">
+                            <li class="nav-item">
+                                <!-- fw-bold: Utility Bootstrap untuk menebalkan teks (Font Weight Bold) -->
+                                <a class="nav-link active fw-bold" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="about.html">About</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="product.html">Product</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- mt-3: Memberi Margin Top (atas) sebesar ukuran 3 dari elemen di atasnya -->
+        <div id="banner" class="mt-3">
+            <!-- rounded-3: Memberi efek lengkung pada sudut gambar -->
+            <!-- w-100: Memaksa lebar gambar mengambil 100% dari area pembungkusnya -->
+            <img src="images/banner1.jpg" alt="Banner" class="img-fluid rounded-3 w-100">
+        </div>
+
+        <!-- class="row": Mendeklarasikan sistem Grid (baris) Bootstrap -->
+        <!-- class="g-3": Gap/Jarak antar gambar (kolom) sebesar ukuran 3 -->
+        <div id="highlight" class="row mt-3 g-3">
+            <!-- col-12: Lebar penuh di layar HP (menumpuk atas bawah) -->
+            <!-- col-md-4: Lebar dibagi 3 (4 kolom dari total 12 grid Bootstrap) di layar medium ke atas (Laptop) -->
+            <div class="col-12 col-md-4">
+                <img src="images/thor.jpg" alt="Thor" class="img-fluid rounded-3 w-100">
+            </div>
+            <div class="col-12 col-md-4">
+                <img src="images/wick.jpg" alt="Wick" class="img-fluid rounded-3 w-100">
+            </div>
+            <div class="col-12 col-md-4">
+                <img src="images/ironman.jpg" alt="Iron Man" class="img-fluid rounded-3 w-100">
             </div>
         </div>
 
-        <div id="banner">
-            <img src="images/banner1.jpg" alt="Banner">
-        </div>
-
-        <div id="highlight">
-            <div class="box">
-                <img src="images/thor.jpg" alt="Thor">
+        <!-- align-items-start: Menyejajarkan elemen secara horizontal agar rata atas -->
+        <div id="content" class="row mt-4 align-items-start">
+            <!-- mb-3 mb-md-0: Di layar HP diberi margin bawah (mb-3), tapi di Laptop margin bawahnya dihapus (mb-md-0) -->
+            <!-- col-md-5: Mengambil proporsi 5 kolom dari total 12 kolom untuk gambar -->
+            <div class="col-12 col-md-5 mb-3 mb-md-0 subtitle">
+                <img src="images/banner2.jpg" alt="Banner 2" class="img-fluid rounded-3 w-100">
             </div>
-
-            <div class="box">
-                <img src="images/wick.jpg" alt="Wick">
-            </div>
-
-            <div class="box">
-                <img src="images/ironman.jpg" alt="Iron Man">
-            </div>
-        </div>
-
-        <div id="content">
-            <div class="subtitle">
-                <img src="images/banner2.jpg" alt="Banner 2">
-            </div>
-
-            <div class="text">
-                <h2>Subtitle Here</h2>
-
-                <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+            <!-- col-md-7: Mengambil sisa proporsi yaitu 7 kolom dari 12 kolom untuk teks -->
+            <div class="col-12 col-md-7 text">
+                <h2 class="fw-bold">Subtitle Here</h2>
+                <!-- text-muted: Memberi warna abu-abu pudar pada teks bawaan Bootstrap -->
+                <p class="fw-bold text-muted">lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip ex ea commodo consequat.
                 </p>
             </div>
         </div>
 
-        <hr>
+        <!-- my-4: Memberikan Margin Y (atas-bawah) sebesar ukuran 4 -->
+        <hr class="my-4">
 
-        <div id="ourClient">
-            <div>
-                <h2>Our Client</h2>
-            </div>
-            <div class="client">
-                <img src="images/0.jpg" alt="Client 1">
-                <img src="images/1.jpg" alt="">
-                <img src="images/2.jpg" alt="">
-                <img src="images/3.jpg" alt="">
-                <img src="images/4.jpg" alt="">
-                <img src="images/5.jpg" alt="">
-            </div>
-        </div>
-
-        <hr>
-
-        <div id="testimonial">
-            <h2>Testimonials</h2>
-
-            <div id="testimonial-john-tony">
-                <div class="testimonial-john">
-                    <img src="images/6.jpg" alt="">
-                    <h2>
-                        John Thor
-                    </h2>
-                    <p>Setelah menggunakan jasa perusahaan ini, saya menjadi seorang super hero yang memiliki kekuatan
-                        untuk mengendalikan petir. Keren banget kan</p>
-                </div>
-
-                <div class="testimonial-tony">
-                    <img src="images/7.jpg" alt="">
-                    <h2>Tony Stark</h2>
-                    <p>Setelah saya kuliah di UMN,saya jadi jenius banget dan bisa bikin Iron Man, saya jadi super hero
-                        paling tajir di jagad raya.</p>
-                </div>
+        <!-- text-center: Membuat seluruh teks di dalam div ini menjadi rata tengah -->
+        <div id="ourClient" class="text-center">
+            <!-- mb-4: Margin bottom (jarak ke bawah) -->
+            <h2 class="fw-bold mb-4">Our Client</h2>
+            <!-- flex-wrap: Jika layar kekecilan, logo klien akan otomatis turun ke baris bawah -->
+            <div class="d-flex justify-content-center justify-content-md-between align-items-center flex-wrap gap-3">
+                <!-- style="width: 12%;": Penyesuaian ukuran manual untuk setiap logo klien -->
+                <img src="images/0.jpg" alt="Client 1" class="img-fluid" style="width: 12%;">
+                <img src="images/1.jpg" alt="" class="img-fluid" style="width: 12%;">
+                <img src="images/2.jpg" alt="" class="img-fluid" style="width: 12%;">
+                <img src="images/3.jpg" alt="" class="img-fluid" style="width: 12%;">
+                <img src="images/4.jpg" alt="" class="img-fluid" style="width: 12%;">
+                <img src="images/5.jpg" alt="" class="img-fluid" style="width: 12%;">
             </div>
         </div>
 
-        <div id="subscribe">
-            <h2>Subscribe to our newsletter to get the latest info</h2>
-            <form>
-                <input type="email" placeholder="Enter your email here..." required>
-                <button type="submit">Suscribe</button>
+        <hr class="my-4">
 
+        <div id="testimonial" class="text-center mb-5">
+            <h2 class="fw-bold mb-4">Testimonials</h2>
+            <!-- justify-content-center: Posisi blok grid selalu di tengah baris -->
+            <div class="row justify-content-center g-4">
+                <!-- col-md-6: Memakan ruang 50% layar laptop (masing-masing berdampingan kiri-kanan) -->
+                <div class="col-12 col-md-6">
+                    <!-- p-4 (padding dalam), shadow-sm (bayangan kotak halus), h-100 (tingginya disamakan dengan kotak sebelah) -->
+                    <div class="p-4 rounded-4 shadow-sm h-100 text-white text-center" style="background-color: #808080;">
+                        <!-- rounded-circle: Memaksa gambar kotak menjadi lingkaran penuh -->
+                        <!-- bg-white: Background belakang gambar di set putih -->
+                        <img src="images/6.jpg" alt="" class="rounded-circle bg-white mb-3" style="width: 80px; height: 80px;">
+                        <h2 class="fw-bold">John Thor</h2>
+                        <!-- mb-0: Menghapus margin bawah teks agar tidak ada sisa area kosong berlebih -->
+                        <p class="fw-bold mb-0">Setelah menggunakan jasa perusahaan ini, saya menjadi seorang super hero yang memiliki kekuatan
+                            untuk mengendalikan petir. Keren banget kan</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-4 rounded-4 shadow-sm h-100 text-white text-center" style="background-color: #808080;">
+                        <img src="images/7.jpg" alt="" class="rounded-circle bg-white mb-3" style="width: 80px; height: 80px;">
+                        <h2 class="fw-bold">Tony Stark</h2>
+                        <p class="fw-bold mb-0">Setelah saya kuliah di UMN,saya jadi jenius banget dan bisa bikin Iron Man, saya jadi super hero
+                            paling tajir di jagad raya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- mx-auto: Margin sumbu x otomatis (kiri dan kanannya sama besar, sehingga blok ini berada di titik tengah horizontal) -->
+        <div id="subscribe" class="p-4 mx-auto text-center text-white rounded-3 mb-5" style="background-color: #ff1495; max-width: 80%;">
+            <!-- fs-4: Font Size 4 (mengecilkan sedikit ukuran font H2) -->
+            <h2 class="fs-4 fw-bold mb-3">Subscribe to our newsletter to get the latest info</h2>
+            <!-- flex-column (di HP, form & tombol numpuk atas-bawah), flex-md-row (di Laptop, form & tombol jejer kiri-kanan) -->
+            <form class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+                <!-- form-control: Styling bawaan Bootstrap agar tampilan input teks / email rapi dan seragam -->
+                <input type="email" class="form-control" placeholder="Enter your email here..." required style="max-width: 400px;">
+                <!-- btn btn-outline-light: Mengubah tombol biasa menjadi tombol desain Bootstrap garis pinggir putih -->
+                <button type="submit" class="btn btn-outline-light fw-bold px-4">Subscribe</button>
             </form>
         </div>
 
-        <footer id="footer-section">
-            <div class="footer-left">
-                <h2>PT. Tajir Mampus Corporation Inc.</h2>
-                <p>Dark Science Boulevard <br> Blok A1 No 45 <br>Gading Serpong, Tangerang</p>
-                <p class="tel">Tel: (021) 123456789</p>
-            </div>
 
-            <div class="footer-right">
-                <div class="image">
-                    <img src="images/facebook.png"  class="icon">
-                    <img src="images/instagram.png" class="icon" alt="">
-                    <img src="images/youtube.png" class="icon" alt="">
+        <footer id="footer-section" class="p-4 rounded-3 text-white" style="background-color: #343434;">
+            <!-- text-center (Teks di HP di tengah), text-md-start (Teks di Laptop rata kiri) -->
+            <!-- align-items-end: Bagian atas tidak sejajar melainkan sejajar menempel di garis dasar bawah blok -->
+            <div class="row text-center text-md-start align-items-end">
+                
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <h2 class="fs-5 fw-bold mb-3">PT. Tajir Mampus Corporation Inc.</h2>
+                    <p class="fw-bold mb-1" style="color: #cccccc; font-size: 0.9rem;">Dark Science Boulevard <br> Blok A1 No 45 <br>Gading Serpong, Tangerang</p>
+                    <p class="fw-bold mt-2 mb-0">Tel: (021) 123456789</p>
                 </div>
 
-                <div>
-                    <p class="copyright">Copyright &copy; 2022 | All rights reserved.</p>
+                <!-- Di HP rata tengah (align-items-center), di Laptop pindah rata kanan (align-items-md-end text-md-end) -->
+                <div class="col-12 col-md-6 d-flex flex-column align-items-center align-items-md-end text-md-end">
+                    <!-- gap-2 memberikan jarak antar logo sosial media -->
+                    <div class="d-flex gap-2 mb-3">
+                        <img src="images/facebook.png" class="icon" alt="" style="width: 32px;">
+                        <img src="images/instagram.png" class="icon" alt="" style="width: 32px;">
+                        <img src="images/youtube.png" class="icon" alt="" style="width: 32px;">
+                    </div>
+                    <p class="fw-bold mb-0" style="color: #bbbbbb; font-size: 0.8rem;">Copyright &copy; 2022 | All rights reserved.</p>
                 </div>
+
             </div>
         </footer>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
