@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Word</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-custom">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="latihan1-2.html">Latihan 1 & 2</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="latihan3.html">Latihan 3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="latihan4.html">Latihan 4</a></li>
+                        <li class="nav-item"><a class="nav-link" href="latihan5.html">Latihan 5</a></li>
+                        <li class="nav-item"><a class="nav-link" href="latihan6.html">Latihan 6</a></li>
+                        <li class="nav-item"><a class="nav-link" href="latihan7.html">Latihan 7</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+            let jam = parseInt(window.prompt("Jam Sekarang (0-23):"));
+            let salam = "";
+
+            if (jam >= 0 && jam <= 23) {
+                if (jam >= 6 && jam <= 10) {
+                    salam = "Selamat Pagi";
+                } else if (jam >= 11 && jam <= 14) {
+                    salam = "Selamat Siang";
+                } else if (jam >= 15 && jam <= 17) {
+                    salam = "Selamat Sore";
+                } else if (jam >= 18 && jam <= 22) {
+                    salam = "Selamat Malam";
+                } else if ((jam >= 23 && jam <= 24) || (jam >= 0 && jam <= 5)) {
+                    salam = "Selamat Tidur";
+                } else {
+                    salam = "Input jam tidak valid!";
+                }
+            }
+
+            alert(salam);
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
+</html>

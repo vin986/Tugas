@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    <script>
+        let nama = window.prompt("nama");
+        let nilai = window.prompt("nilai");
+
+        alert(cekNilai(nilai));
+
+        function cekNilai(nilai) {
+            if(nilai >= 60){
+                return "Lulus";
+            } else {
+                return "Gagal";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+body {
+    font-family: 'Fraunces', serif;
+    color: blue;
+}
+
+
+#navbarNav{
+    width: max-content;
+    margin: 0 auto;
+    background-color: grey;
+    border-radius: 2rem;
+    padding: 10px;
+}
+
+.navbar-brand span {
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white;
+}
+
+.nav-item {
+    font-size: 28px;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border-color: #fff;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <title>Latihan 2 - Looping</title>
+</head>
+<body>
+    <script>
+        let jumlahMhs = window.prompt("Jumlah");
+    
+        for (let i = 1; i <= jumlahMhs; i++) {
+            console.log('test');
+            
+            let nama = window.prompt('Nama');
+            let uts = window.prompt('UTS');
+            let uas = window.prompt('UAS');
+            let tugas = window.prompt('Tugas');
+
+            document.write("<br /><br />" + i + ". " + nama + "<br />");
+            document.write("Tugas: " + tugas);
+            document.write("<br />UTS: " + uts);
+            document.write("<br />UAS: " + uas);
+        }
+    </script>
+</body>
+</html>
