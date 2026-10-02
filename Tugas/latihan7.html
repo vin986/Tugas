@@ -4,55 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Word</title>
+    <title>Hello World</title>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-xl navbar-custom">
-            <div class="container">
+
+            <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="latihan1-2.html">Latihan 1 & 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan3.html">Latihan 3</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan4.html">Latihan 4</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan5.html">Latihan 5</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan6.html">Latihan 6</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="latihan7.html">Latihan 7</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan1-2.html">Latihan 1 & 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan3.html">Latihan 3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan4.html">Latihan 4</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan5.html">Latihan 5</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan6.html">Latihan 6</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../Tugas/latihan7.html">Latihan 7</a></li>
                     </ul>
                 </div>
             </div>
+
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavTutorial">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavTutorial">
+                    <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="../Tutorial/tutorial1.html">Tutorial 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tutorial/tutorial2.html">Tutorial 2</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </nav>
     </header>
+
     <script>
-            let hari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-            let jumlahKehadiran = [];
+        let hari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+        let jumlahKehadiran = [];
 
-            // Mengumpulkan data dari user
-            for (let i = 0; i < hari.length; i++) {
-                let jumlah = window.prompt("Masukkan kehadiran hari " + hari[i] + ":");
-                jumlahKehadiran.push(jumlah);
+        // Mengumpulkan data dari user
+        for (let i = 0; i < hari.length; i++) {
+            let jumlah = window.prompt("Masukkan kehadiran hari " + hari[i] + ":");
+            jumlahKehadiran.push(jumlah);
+        }
+
+        document.write(`
+            <main class="main-content">
+                <div class="hasil-card">
+                    <h1>Grafik Jumlah Kehadiran Mahasiswa</h1>
+                    <p class="deskripsi">Data kehadiran mahasiswa dari Senin sampai Sabtu</p>
+                    <div class="grafik">
+        `);
+
+        for (let i = 0; i < hari.length; i++) {
+            let jumlahX = "";
+
+            for (let j = 0; j < jumlahKehadiran[i]; j++) {
+                jumlahX += "X";
             }
 
-            document.write("<h3>Grafik Jumlah Kehadiran Mahasiswa</h3>");
+            document.write(`
+                <div class="grafik-row">
+                    <div class="hari">${hari[i]}</div>
+                    <div class="bar-container">
+                        <span class="bar">${jumlahX}</span>
+                    </div>
+                    <div class="jumlah">${jumlahKehadiran[i]}</div>
+                </div>
+            `);
+        }
 
-            for (let i = 0; i < hari.length; i++) {
-                let jumlahX = "";
-                for (let j = 0; j < jumlahKehadiran[i]; j++) {
-                    jumlahX += "X";
-                }
-                document.write(hari[i] + ": " + jumlahX + "<br/>");
-            }
-        </script>
+        document.write(`
+                    </div>
+                </div>
+            </main>
+        `);
+    </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

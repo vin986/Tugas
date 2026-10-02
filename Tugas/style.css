@@ -1,38 +1,412 @@
 body {
-    font-family: 'Fraunces', serif;
-    color: blue;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
 }
 
+.navbar-custom {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 12px auto;
+    gap: 12px;
+}
 
-#navbarNav{
-    width: max-content;
+.navbar-custom .container-fluid {
+    width: 100%;
+    padding: 0;
+}
+
+#navbarNav,
+#navbarNavTutorial {
+    width: fit-content;
     margin: 0 auto;
-    background-color: grey;
-    border-radius: 2rem;
-    padding: 10px;
-}
-
-.navbar-brand span {
-    color: black;
-    font-weight: bold;
-}
-
-.navbar-custom .navbar-brand,
-.navbar-custom .nav-link {
-    color: white;
+    padding: 8px 18px;
+    background: #333;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
 
 .nav-item {
-    font-size: 28px;
+    font-size: 16px;
+}
+
+.navbar-custom .nav-link {
+    color: white;
+    padding: 8px 16px;
+    margin: 0 3px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .navbar-custom .nav-link:hover,
 .navbar-custom .nav-link.active {
-    color: black;
+    background: white;
+    color: #222;
+}
+
+.navbar-custom .nav-link.active {
     font-weight: bold;
 }
 
 .navbar-toggler {
-    border-color: #fff;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.main-content {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+}
+
+.hasil-card,
+.welcome-card {
+    width: min(90%, 700px);
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-card {
+    text-align: center;
+}
+
+.hasil-card h1,
+.welcome-card h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+    color: #222;
+}
+
+.welcome-card h1 {
+    font-weight: bold;
+}
+
+.deskripsi {
+    margin: 8px 0 25px;
+    color: #777;
+}
+
+.hasil-card {
+    position: relative;
+}
+
+.hasil-card h2 {
+    margin: 0 0 22px;
+    font-size: 28px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.hasil-card p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 12px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.hasil-card p span {
+    color: #666;
+}
+
+.hasil-card p strong {
+    color: #222;
+}
+
+.nomor {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nilai-akhir {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px 18px;
+    background: #f1f1f1;
+    border-radius: 12px;
+}
+
+.nilai-akhir span {
+    font-weight: bold;
+    color: #555;
+}
+
+.nilai-akhir strong {
+    font-size: 24px;
+    color: #222;
+}
+
+.grade {
+    width: 65px;
+    height: 65px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.grade:hover {
+    transform: scale(1.08);
+    background: #555;
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 13px 18px;
+    background: #f6f6f6;
+    border-radius: 10px;
+    border-left: 5px solid #333;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    transform: translateX(5px);
+    background: #ededed;
+}
+
+.info-box span:first-child {
+    font-weight: bold;
+}
+
+.info-box span:last-child {
+    color: #555;
+}
+
+.hasil-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.hasil-header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #222;
+}
+
+.hasil-header p {
+    margin-top: 5px;
+    color: #777;
+}
+
+.data-row,
+.result-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-row {
+    padding: 14px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.data-row span {
+    color: #777;
+}
+
+.data-row strong {
+    color: #222;
+}
+
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: #333;
+    color: white;
+    border-radius: 15px;
+}
+
+.result-box span {
+    font-size: 18px;
+}
+
+.result-box strong {
+    font-size: 30px;
+}
+
+.angka-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.angka {
+    min-width: 50px;
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    color: white;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.angka:hover {
+    background: #555;
+    transform: translateY(-4px);
+}
+
+.error-card h1 {
+    color: #c0392b;
+}
+
+.error-card p {
+    display: block;
+    margin-top: 15px;
+    color: #666;
+    font-size: 18px;
+}
+
+.grafik {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.grafik-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 40px;
+    align-items: center;
+    gap: 15px;
+}
+
+.hari {
+    font-weight: bold;
+    color: #333;
+}
+
+.bar-container {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar {
+    display: block;
+    padding: 8px 10px;
+    background: #333;
+    color: white;
+    border-radius: 7px;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.jumlah {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.grafik-row:hover .bar {
+    background: #555;
+}
+
+@media (max-width: 1199.98px) {
+    #navbarNav,
+    #navbarNavTutorial {
+        width: 90%;
+        border-radius: 20px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-custom .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hasil-card,
+    .welcome-card {
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+    .hasil-card h1,
+    .welcome-card h1 {
+        font-size: 26px;
+    }
+
+    .hasil-card h2 {
+        font-size: 24px;
+    }
+
+    .result-box strong {
+        font-size: 24px;
+    }
+
+    .angka {
+        min-width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .grafik-row {
+        grid-template-columns: 65px 1fr 35px;
+        gap: 8px;
+    }
+
+    .bar {
+        letter-spacing: 1px;
+        padding: 7px;
+    }
+
+    .nomor {
+        width: 30px;
+        height: 30px;
+        top: 15px;
+        right: 15px;
+    }
 }

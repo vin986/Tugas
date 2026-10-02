@@ -4,74 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Word</title>
+    <title>Hello World</title>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-xl navbar-custom">
-            <div class="container">
+
+            <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="latihan1-2.html">Latihan 1 & 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan3.html">Latihan 3</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="latihan4.html">Latihan 4</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan5.html">Latihan 5</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan6.html">Latihan 6</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan7.html">Latihan 7</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan1-2.html">Latihan 1 & 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan3.html">Latihan 3</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../Tugas/latihan4.html">Latihan 4</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan5.html">Latihan 5</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan6.html">Latihan 6</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan7.html">Latihan 7</a></li>
                     </ul>
                 </div>
             </div>
+
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavTutorial">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavTutorial">
+                    <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="../Tutorial/tutorial1.html">Tutorial 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tutorial/tutorial2.html">Tutorial 2</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </nav>
     </header>
+
     <script>
-            let panjang = parseFloat(window.prompt("Masukkan Panjang: "));
-            let lebar = parseFloat(window.prompt("Masukkan Lebar: "));
-            let pilihan = "";
+        let panjang = parseFloat(window.prompt("Masukkan Panjang:"));
+        let lebar = parseFloat(window.prompt("Masukkan Lebar:"));
+        let pilihan = "";
 
-            while (true) {
-                pilihan = window.prompt("Mau menghitung apa?'luas' atau 'keliling'").toLowerCase();
-                if (pilihan === "luas" || pilihan === "keliling") {
-                    break;
-                }
-                alert("Wajib memilih untuk melanjutkan perhitungan!");
+        while (true) {
+            pilihan = window.prompt("Mau menghitung apa? 'luas' atau 'keliling'").toLowerCase();
+
+            if (pilihan === "luas" || pilihan === "keliling") {
+                break;
             }
 
-            function luas(p, l) {
-                return p * l;
-            }
+            alert("Wajib memilih untuk melanjutkan perhitungan!");
+        }
 
-            function keliling(p, l) {
-                return 2 * (p + l);
-            }
+        function luas(p, l) {
+            return p * l;
+        }
 
-            let hasil = 0;
+        function keliling(p, l) {
+            return 2 * (p + l);
+        }
 
-            if (pilihan === "luas") {
-                hasil = luas(panjang, lebar);
-                alert("Luas adalah: " + hasil);
-            } else {
-                hasil = keliling(panjang, lebar);
-                alert("Keliling adalah: " + hasil);
-            }
+        let hasil = 0;
 
-            document.write("<br /><br />" + "Panjang: " + panjang);
-            document.write("<br />" + "Lebar: " + lebar);
-            if (pilihan === "luas") {
-                document.write("<br />" + "Luas: " + hasil);
-            } else {
-                document.write("<br />" + "Keliling: " + hasil);
-            }
-        </script>
+        if (pilihan === "luas") {
+            hasil = luas(panjang, lebar);
+            alert("Luas adalah: " + hasil);
+        } else {
+            hasil = keliling(panjang, lebar);
+            alert("Keliling adalah: " + hasil);
+        }
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        document.write(`
+            <main class="main-content">
+                <div class="hasil-card">
+                    <div class="hasil-header">
+                        <h1>Hasil Perhitungan</h1>
+                        <p>Latihan 4</p>
+                    </div>
+
+                    <div class="data-row">
+                        <span>Panjang</span>
+                        <strong>${panjang}</strong>
+                    </div>
+
+                    <div class="data-row">
+                        <span>Lebar</span>
+                        <strong>${lebar}</strong>
+                    </div>
+
+                    <div class="data-row">
+                        <span>Perhitungan</span>
+                        <strong>${pilihan}</strong>
+                    </div>
+
+                    <div class="result-box">
+                        <span>${pilihan === "luas" ? "Luas" : "Keliling"}</span>
+                        <strong>${hasil}</strong>
+                    </div>
+                </div>
+            </main>
+        `);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -4,56 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Word</title>
+    <title>Hello World</title>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-xl navbar-custom">
-            <div class="container">
+
+            <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="latihan1-2.html">Latihan 1 & 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan3.html">Latihan 3</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan4.html">Latihan 4</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan5.html">Latihan 5</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="latihan6.html">Latihan 6</a></li>
-                        <li class="nav-item"><a class="nav-link" href="latihan7.html">Latihan 7</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan1-2.html">Latihan 1 & 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan3.html">Latihan 3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan4.html">Latihan 4</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan5.html">Latihan 5</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../Tugas/latihan6.html">Latihan 6</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tugas/latihan7.html">Latihan 7</a></li>
                     </ul>
                 </div>
             </div>
+
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavTutorial">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavTutorial">
+                    <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="../Tutorial/tutorial1.html">Tutorial 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Tutorial/tutorial2.html">Tutorial 2</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </nav>
     </header>
+
     <script>
-            let angka = window.prompt("Masukkan Angka: ");
-            if (angka < 2) {
-                alert("Bukan Bilangan Prima");
-                document.write("<br />" + "Bukan Bilangan Prima");
-            } else {
-                document.write("Bilangan Prima dari 1 sampai " + angka + " yaitu ");
-                for (let i = 2; i <= angka; i++) {
-                    let prima = true;
-                    for (let j = 2; j <= Math.sqrt(i); j++) {
-                        if (i % j === 0) {
-                            prima = false;
-                            break;
-                        }
-                    }
-                    if (prima) {
-                        document.write(i + " ");
+        let angka = window.prompt("Masukkan Angka: ");
+
+        if (angka < 2) {
+            alert("Bukan Bilangan Prima");
+
+            document.write(`
+                <main class="main-content">
+                    <div class="hasil-card error-card">
+                        <h1>Bukan Bilangan Prima</h1>
+                        <p>Angka yang dimasukkan adalah <strong>${angka}</strong>.</p>
+                    </div>
+                </main>
+            `);
+
+        } else {
+            document.write(`
+                <main class="main-content">
+                    <div class="hasil-card">
+                        <h1>Bilangan Prima</h1>
+                        <p class="deskripsi">Bilangan prima dari 1 sampai <strong>${angka}</strong></p>
+                        <div class="angka-container">
+            `);
+
+            for (let i = 2; i <= angka; i++) {
+                let prima = true;
+
+                for (let j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j === 0) {
+                        prima = false;
+                        break;
                     }
                 }
-            }
-        </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+                if (prima) {
+                    document.write("<span class='angka'>" + i + "</span>");
+                }
+            }
+
+            document.write(`
+                        </div>
+                    </div>
+                </main>
+            `);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
