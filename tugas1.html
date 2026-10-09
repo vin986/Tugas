@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model (DOM)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Document Object Model (DOM)</h1>
+        <h2>Pendaftaran Kelompok</h2>
+
+        <div class="form-group">
+            <label for="namaKelompok">Nama Kelompok</label>
+            <input
+                type="text"
+                id="namaKelompok"
+                placeholder="Masukkan nama kelompok"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="jumlahAnggota">Jumlah Anggota</label>
+            <input type="number" id="jumlahAnggota" min="1" placeholder="Masukkan jumlah anggota">
+
+            <button type="button" onclick="buatAnggota()">
+                Buat Form Anggota
+            </button>
+        </div>
+
+        <div id="anggota"></div>
+
+        <div id="hasil"></div>
+
+    </div>
+
+
+    <script>
+
+        function buatAnggota() {
+
+            let jumlah = document.getElementById("jumlahAnggota").value;
+
+            jumlah = parseInt(jumlah);
+
+            let container = document.getElementById("anggota");
+
+            container.innerHTML = "";
+            document.getElementById("hasil").innerHTML = "";
+
+            // Memeriksa jumlah anggota
+            // if (isNaN(jumlah) || jumlah < 1) {
+            //     alert("Masukkan jumlah anggota terlebih dahulu!");
+            //     return;
+            // }
+
+            let judul = document.createElement("h3");
+
+            let teksJudul = document.createTextNode("Anggota Kelompok:");
+
+            judul.appendChild(teksJudul);
+            container.appendChild(judul);
+
+            for (let i = 1; i <= jumlah; i++) {
+
+                let label = document.createElement("label");
+                let teksLabel = document.createTextNode(
+                    "Nama Anggota " + i
+                );
+
+                label.appendChild(teksLabel);
+                label.setAttribute("for", "anggota" + i);
+
+                container.appendChild(label);
+                let input = document.createElement("input");
+
+                input.setAttribute("type", "text");
+                input.setAttribute("id", "anggota" + i);
+                input.setAttribute("name", "anggota" + i);
+                input.setAttribute("placeholder", "Masukkan nama anggota " + i
+                );
+
+                container.appendChild(input);
+            }
+
+            let tombol = document.createElement("button");
+
+            tombol.setAttribute("type", "button");
+
+            let teksTombol = document.createTextNode("Daftar Kelompok");
+
+            tombol.appendChild(teksTombol);
+
+            tombol.setAttribute("onclick", "daftarKelompok()");
+
+            container.appendChild(tombol);
+        }
+
+        function daftarKelompok() {
+
+            let namaKelompok = document.getElementById("namaKelompok").value;
+
+            let jumlah = parseInt(
+                document.getElementById("jumlahAnggota").value
+            );
+
+            let hasil = document.getElementById("hasil");
+
+            hasil.innerHTML = "";
+
+            let namaAnggota = [];
+
+            // Memeriksa nama setiap anggota
+            for (let i = 1; i <= jumlah; i++) {
+
+                let inputAnggota = document.getElementById("anggota" + i);
+
+                if (inputAnggota.value.trim() === "") {
+                    alert("Nama Anggota " + i + " harus diisi!");
+                    return;
+                }
+
+                namaAnggota.push(inputAnggota.value);
+            }
+
+            let judul = document.createElement("h3");
+
+            let teksJudul = document.createTextNode(
+                "Pendaftaran Berhasil"
+            );
+
+            judul.appendChild(teksJudul);
+            hasil.appendChild(judul);
+
+            let nama = document.createElement("p");
+
+            let teksNama = document.createTextNode(
+                "Nama Kelompok: " + namaKelompok
+            );
+
+            nama.appendChild(teksNama);
+            hasil.appendChild(nama);
+
+            let total = document.createElement("p");
+
+            let teksTotal = document.createTextNode(
+                "Jumlah Anggota: " + jumlah
+            );
+
+            total.appendChild(teksTotal);
+            hasil.appendChild(total);
+
+
+            let daftar = document.createElement("ol");
+
+            for (let i = 0; i < namaAnggota.length; i++) {
+
+                let li = document.createElement("li");
+
+                let teksAnggota = document.createTextNode(
+                    namaAnggota[i]
+                );
+
+                li.appendChild(teksAnggota);
+                daftar.appendChild(li);
+            }
+
+            hasil.appendChild(daftar);
+        }
+
+    </script>
+
+</body>
+</html>
